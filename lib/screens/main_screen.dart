@@ -12,7 +12,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  PageController _pageController;
+  late PageController _pageController;
   int _page = 0;
 
   List icons = [
@@ -99,8 +99,8 @@ class _MainScreenState extends State<MainScreen> {
             size: 24.0,
           ),
           color: _page == index
-              ? Theme.of(context).accentColor
-              : Theme.of(context).textTheme.caption.color,
+              ? Theme.of(context).colorScheme.secondary
+              : Theme.of(context).textTheme.bodySmall?.color,
           onPressed: () => _pageController.jumpToPage(index),
         ),
       );

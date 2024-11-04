@@ -4,46 +4,40 @@ class Constants {
   static String appName = "Foody Bite";
 
   //Colors for theme
-  static Color lightPrimary = Color(0xfffcfcff);
-  static Color darkPrimary = Colors.black;
-  static Color lightAccent = Color(0xff5563ff);
-  static Color darkAccent = Color(0xff5563ff);
-  static Color lightBG = Color(0xfffcfcff);
-  static Color darkBG = Colors.black;
-  static Color ratingBG = Colors.yellow[600];
+  static Color? lightPrimary = Color(0xfffcfcff);
+  static Color? darkPrimary = Colors.black;
+  static Color? lightSecondary = Color(0xff5563ff);
+  static Color? darkSecondary = Color(0xff5563ff);
+  static Color? lightBG = Color(0xfffcfcff);
+  static Color? darkBG = Colors.black;
+  static Color? ratingBG = Colors.yellow[600];
+
+  static TextStyle? appBarTitleStyle = TextStyle(
+    fontSize: 20.0,
+    fontWeight: FontWeight.w800,
+  );
 
   static ThemeData lightTheme = ThemeData(
-    backgroundColor: lightBG,
-    primaryColor: lightPrimary,
-    accentColor: lightAccent,
-    cursorColor: lightAccent,
-    scaffoldBackgroundColor: lightBG,
-    appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
-        headline6: TextStyle(
-          color: darkBG,
-          fontSize: 18.0,
-          fontWeight: FontWeight.w800,
-        ),
-      ),
+    colorScheme: ColorScheme.light(
+      primary: lightPrimary!,
+      secondary: lightSecondary!,
+      background: lightBG!,
     ),
+    appBarTheme: AppBarTheme(
+      titleTextStyle: appBarTitleStyle?.copyWith(color: Colors.white),
+    ),
+    useMaterial3: true,
   );
 
   static ThemeData darkTheme = ThemeData(
-    brightness: Brightness.dark,
-    backgroundColor: darkBG,
-    primaryColor: darkPrimary,
-    accentColor: darkAccent,
-    scaffoldBackgroundColor: darkBG,
-    cursorColor: darkAccent,
-    appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
-        headline6: TextStyle(
-          color: lightBG,
-          fontSize: 18.0,
-          fontWeight: FontWeight.w800,
-        ),
-      ),
+    colorScheme: ColorScheme.dark(
+      primary: darkPrimary!,
+      secondary: darkSecondary!,
+      background: darkBG!,
     ),
+    appBarTheme: AppBarTheme(
+      titleTextStyle: appBarTitleStyle?.copyWith(color: lightBG),
+    ),
+    useMaterial3: true,
   );
 }

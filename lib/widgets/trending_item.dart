@@ -8,11 +8,11 @@ class TrendingItem extends StatefulWidget {
   final String rating;
 
   TrendingItem({
-    Key key,
-    @required this.img,
-    @required this.title,
-    @required this.address,
-    @required this.rating,
+    Key? key,
+    required this.img,
+    required this.title,
+    required this.address,
+    required this.rating,
   }) : super(key: key);
 
   @override

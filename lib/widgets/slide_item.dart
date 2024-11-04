@@ -8,11 +8,11 @@ class SlideItem extends StatefulWidget {
   final String rating;
 
   SlideItem({
-    Key key,
-    @required this.img,
-    @required this.title,
-    @required this.address,
-    @required this.rating,
+    Key? key,
+    required this.img,
+    required this.title,
+    required this.address,
+    required this.rating,
   }) : super(key: key);
 
   @override
